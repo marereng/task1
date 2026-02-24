@@ -3,10 +3,10 @@ import express from 'express';
 const app = express();
 
 // using middleware
-app.use((req, res, next) => {
-    console.log(`Jalan ke Middleware sebelum ke sini ${req.path}`);
-    next();
-});
+// app.use((req, res, next) => {
+//     console.log(`Jalan ke Middleware sebelum ke sini ${req.path}`);
+//     next();
+// });
 
 // using error middleware
 app.use((req, res, next) => {
