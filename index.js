@@ -9,29 +9,30 @@ const app = express();
 // });
 
 // using error middleware
-app.use((req, res, next) => {
-    if (false){
-        next(new Error('Yeay'));
-        return;
-    }
-    next();
-});
+// app.use((req, res, next) => {
+//     if (false){
+//         next(new Error('Yeay'));
+//         return;
+//     }
+//     next();
+// });
 
 app.get('/', (req, res) => { 
     res.send('Rere sukses');
 });
 
-app.use((er, req, res, next) => {
-    res.send('Error Occured');
-});
+// error handling
+// app.use((er, req, res, next) => {
+//     res.send('Error Occured');
+// });
 
 
 
 // using path parameter
-// app.get('/:greeting', (req, res) => {
-//     const { greeting } = req.params;
-//     res.send(greeting);
-// });
+app.get('/:greeting', (req, res) => {
+    const { greeting } = req.params;
+    res.send(greeting);
+});
 
 
 
