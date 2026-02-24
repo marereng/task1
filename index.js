@@ -21,6 +21,8 @@ app.get('/', (req, res) => {
     res.send('Rere sukses');
 });
 
+app.get('')
+
 // error handling
 // app.use((er, req, res, next) => {
 //     res.send('Error Occured');
@@ -34,6 +36,10 @@ app.get('/', (req, res) => {
 
 app.get('/maretha', (req, res) => {
     res.send('enaknya digaji tanpa kerja');
+});
+
+app.get('/nasikotak', (req, res) => {
+     return res.status(401).json({ message: 'Unauthorized' });
 });
 
 app.listen(3000, () => {
