@@ -26,15 +26,15 @@ app.get('/', (req, res) => {
 //     res.send('Error Occured');
 // });
 
-
-
 // using path parameter
-app.get('/:greeting', (req, res) => {
-    const { greeting } = req.params;
-    res.send(greeting);
+// app.get('/:greeting', (req, res) => {
+//     const { greeting } = req.params;
+//     res.send(greeting);
+// });
+
+app.get('/maretha', (req, res) => {
+    res.send('enaknya digaji tanpa kerja');
 });
-
-
 
 app.listen(3000, () => {
     console.log('Server berjalan di http://localhost:3000');
