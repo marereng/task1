@@ -39,7 +39,7 @@ app.get('/maretha', (req, res) => {
 });
 
 app.get('/nasikotak', (req, res) => {
-     return res.status(401).json({ message: 'Unauthorized' });
+     res.status(401).send("nasi kotak isi nasi uduk, ayam sambal matah, sebuah apel, dan juga air putih");
 });
 
 app.listen(3000, () => {
