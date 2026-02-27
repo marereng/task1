@@ -82,7 +82,7 @@ router.put('/:id', async (req, res, next) => {
 
     try {
         const note = await Post.findByIdAndUpdate(req.params.id, 
-            { title, content }, 
+            { title, content, author }, 
             { new: true });
         if (!note) return res.status(404).json({ message: 'Note not found' });
         res.json(note);
