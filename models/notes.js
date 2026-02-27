@@ -10,6 +10,7 @@ let notes = [
 
 export const list = () => {
     return notes.map(({id, title}) => ({
+        author,
         id, 
         title
     }));

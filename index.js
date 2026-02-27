@@ -2,11 +2,13 @@ import express from 'express';
 import noteRouter from './routes/notes.js'; 
 import mongoose from 'mongoose';
 import { Post } from './models/index.js'; 
+import cors from 'cors';
 
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
+app.use(cors());
 
 app.use('/notes', noteRouter);
 

@@ -45,7 +45,7 @@ router.get('/:id', async (req, res, next) => {
 
 // CREATE MEMO MDB
 router.post('/', async (req, res, next) => {
-    const { title, content } = req.body;
+    const { author, title, content } = req.body;
 
     if (!title || !content) {
         return res.status(400).json({ message: 'Title and content are required' });
@@ -53,6 +53,7 @@ router.post('/', async (req, res, next) => {
     try {
         const note = await Post.create(
             {
+                author: author,
                 title: title,
                 content: content,
             });
@@ -77,7 +78,7 @@ router.post('/', async (req, res, next) => {
 
 //UPDATE MDB
 router.put('/:id', async (req, res, next) => {
-    const { title, content } = req.body;
+    const { author, title, content } = req.body;
 
     try {
         const note = await Post.findByIdAndUpdate(req.params.id, 
