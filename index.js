@@ -1,11 +1,12 @@
 import express from 'express';
 import noteRouter from './routes/notes.js'; 
+import userRouter from './routes/userRoute.js';
 import mongoose from 'mongoose';
 import { Post } from './models/index.js'; 
 import cors from 'cors';
 
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 
 app.use(express.json());
 app.use(cors({
@@ -13,6 +14,8 @@ app.use(cors({
 }));
 
 app.use('/notes', noteRouter);
+
+app.use('/auth', userRouter);
 
 app.use((err, req, res, next) => {
     console.error(err);
@@ -41,8 +44,8 @@ mongoose.connect('mongodb+srv://user_maretha:26011998@kada.rigglbs.mongodb.net/?
     return console.log("✅ Berhasil terhubung ke MongoDB!");  
   })
 
-app.listen(3000, () => {
-    console.log('Server berjalan di http://localhost:3000');
+app.listen(5000, () => {
+    console.log('Server berjalan di http://localhost:5000');
 });
 
 
