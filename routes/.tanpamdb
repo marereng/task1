@@ -1,0 +1,41 @@
+
+// Memo List tanpa MDB
+// router.get('/', (req, res, next) => {
+//     const notes = Note.list();
+//     res.json(notes);
+// });
+
+// router.get('/:id', (req, res, next) => {
+//     const id = Number(req.params.id);
+//     console.log(id);
+//     try {
+//         const note = Note.get(id);
+//         res.json(note);
+//     } catch (error) {
+//         next(error);
+//     }
+// });
+
+// PUT TANPA MDB
+// router.put('/:id', (req, res, next) => {
+//     const id = Number(req.params.id);
+//     const { title, content } = req.body;
+
+//     try {
+//         const note = Note.update(id, title, content);
+//         res.json(note);
+//     } catch (error) {
+//         next(error);
+//     }
+// });
+
+// DELETE TANPA MDB
+// router.delete('/:id', (req, res, next) => {
+//     const id = Number(req.params.id);
+//     try {
+//         Note.remove(id);
+//         res.json({ message: 'Note deleted successfully' });
+//     } catch (error) {
+//         next(error);
+//     }
+// });

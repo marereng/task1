@@ -4,24 +4,6 @@ import { Post } from '../models/index.js';
 
 const router = Router();
 
-// Memo List tanpa MDB
-// router.get('/', (req, res, next) => {
-//     const notes = Note.list();
-//     res.json(notes);
-// });
-
-// router.get('/:id', (req, res, next) => {
-//     const id = Number(req.params.id);
-//     console.log(id);
-//     try {
-//         const note = Note.get(id);
-//         res.json(note);
-//     } catch (error) {
-//         next(error);
-//     }
-// });
-
-
 router.get('/', async (req, res, next) => {
     
     try {
@@ -63,19 +45,6 @@ router.post('/', async (req, res, next) => {
     }
 });
 
-// PUT TANPA MDB
-// router.put('/:id', (req, res, next) => {
-//     const id = Number(req.params.id);
-//     const { title, content } = req.body;
-
-//     try {
-//         const note = Note.update(id, title, content);
-//         res.json(note);
-//     } catch (error) {
-//         next(error);
-//     }
-// });
-
 //UPDATE MDB
 router.put('/:id', async (req, res, next) => {
     const { author, title, content } = req.body;
@@ -90,17 +59,6 @@ router.put('/:id', async (req, res, next) => {
         next(error);
     }
 });
-
-// DELETE TANPA MDB
-// router.delete('/:id', (req, res, next) => {
-//     const id = Number(req.params.id);
-//     try {
-//         Note.remove(id);
-//         res.json({ message: 'Note deleted successfully' });
-//     } catch (error) {
-//         next(error);
-//     }
-// });
 
 //DELETE MDB
 router.delete('/:id', async (req, res, next) => {
