@@ -27,7 +27,7 @@ router.post("/register", async (req, res) => {
     const { username, email, password } = req.body;
 
     // Simpan password langsung dalam bentuk hash SHA256
-    const newUser = await User.create({
+    await User.create({
       username,
       email,
       password: getHash(password)
