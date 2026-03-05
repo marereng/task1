@@ -1,7 +1,6 @@
 import express from "express";
 import { createTransaction, handleNotification, checkStatus } from "../midtrans.js";
 import router from './userRoute';
-import { checkStatus } from './../midtrans';
 
 const router = express.Router();
 
