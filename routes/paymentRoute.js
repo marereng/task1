@@ -1,9 +1,12 @@
 import express from "express";
-import { createTransaction, handleNotification } from "../midtrans.js";
+import { createTransaction, handleNotification, checkStatus } from "../midtrans.js";
+import router from './userRoute';
+import { checkStatus } from './../midtrans';
 
 const router = express.Router();
 
 router.post('/create', createTransaction);
 router.post('/notification', handleNotification);
+router.get('/status/:orderId', checkStatus);
 
 export default router;
