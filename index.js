@@ -94,3 +94,5 @@ app.use((er, req, res, next) => {
 // app.get('/nasikotak', (req, res) => {
 //      res.status(401).send("nasi kotak isi nasi uduk, ayam sambal matah, sebuah apel, dan juga air putih");
 // });s
+
+export default app;
